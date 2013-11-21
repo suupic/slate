@@ -1,17 +1,17 @@
 ---
-title: API Reference
+title: API 参考文档
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - Android
+  - PHP
+  - Java
 
 toc_footers:
  - <a href='#'>Sign Up for a Developer Key</a>
  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
 ---
 
-# Introduction
+# 简介
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
@@ -19,7 +19,7 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 
 This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# 授权认证
 
 > To authorize, use this code:
 
@@ -53,7 +53,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace `meowmeowmeow` with your personal API key.
 </aside>
 
-# Kittens
+# 变更记录
 
 ## Get All Kittens
 
@@ -161,7 +161,13 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the cat to retrieve
 
-# Errors
+# 商户认证
+# 订单
+## 订单创建
+## 订单查询
+
+
+# 错误代码
 
 The Kittn API uses the following error codes:
 
