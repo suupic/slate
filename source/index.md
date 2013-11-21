@@ -19,7 +19,7 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 
 This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# 授权认证
+# 变更记录
 
 > To authorize, use this code:
 
@@ -53,9 +53,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace `meowmeowmeow` with your personal API key.
 </aside>
 
-# 变更记录
+# 授权认证
 
-## Get All Kittens
+## 获取Token
 
 ```ruby
 require 'kittn'
@@ -161,8 +161,7 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the cat to retrieve
 
-# 商户认证
-# 订单
+# 订单处理
 ## 订单创建
 ## 订单查询
 
