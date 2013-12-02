@@ -57,6 +57,7 @@ You must replace `meowmeowmeow` with your personal API key.
 
 ## 获取Token
 
+
 ```ruby
 require 'kittn'
 
@@ -161,11 +162,23 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the cat to retrieve
 
-# 订单处理
+# 支付订单
 ## 订单创建
 ## 订单查询
-
-
+# 已售商品
+## 查询已售
+## 退款
+# 退款
+## 查询退款
+# 安全存储
+## 存储用户卡信息
+## 删除用户卡信息
+## 查询用户卡信息
+;# 通用支付对象
+# 渠道路由
+## 添加渠道
+## 删除渠道
+## 查询渠道
 # 错误代码
 
 The Kittn API uses the following error codes:
