@@ -2,9 +2,9 @@
 title: API 参考文档
 
 language_tabs:
-  - Android
-  - PHP
-  - Java
+  - shell
+  - php
+  - java
 
 toc_footers:
  - <a href='#'>Sign Up for a Developer Key</a>
@@ -15,33 +15,11 @@ toc_footers:
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in CURL, JAVA, and PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # 变更记录
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import 'kittn'
-
-api = Kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
 
 Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
@@ -56,31 +34,36 @@ You must replace `meowmeowmeow` with your personal API key.
 # 授权认证
 
 ## 获取Token
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
 
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import 'kittn'
-
-api = Kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+# 支付订单
+## 订单创建
+生成一个支付订单
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl "http://api.example.com/v1/payments/new"
+  -d "product_id=123" \
+  -d "product_name=apple" \
+  -d "amount=10.00"
 ```
 
-> The above command returns JSON structured like this:
+```php
+curl "http://api.example.com/v1/payments/payment"
+  -d "product_id=123" \
+  -d "product_name=apple" \
+  -d "amount=10.00"
+```
 
-```json
-[
+```java
+curl "http://api.example.com/v1/payments/payment"
+  -d "product_id=123" \
+  -d "product_name=apple" \
+  -d "amount=10.00"
+
+  //响应示例:
+
   {
     "id": 1,
     "name": "Fluffums",
@@ -95,86 +78,36 @@ curl "http://example.com/api/kittens"
     "fluffiness": 5,
     "cuteness": 10
   }
-]
+
 ```
 
-This endpoint retrieves all kittens.
 
-### HTTP Request
+### HTTP 请求
 
-`GET http://example.com/kittens`
+`POST http://api.example.com/v1/payments/payment`
 
-### Query Parameters
+### 请求参数
 
-Parameter | Default | Description
+必选参数 | 类型 | 说明
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+source_id | Long | 渠道代码
+product_id | String | 商品代码
+product_name | String | 商品名称
+amount | Int | 金额
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
+可选参数 | 类型 | 说明
+--------- | ------- | -----------
+external_ext | String | 外部扩展字段
+memo | String | 备注
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import 'kittn'
-
-api = Kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the cat to retrieve
-
-# 支付订单
-## 订单创建
 ## 订单查询
 # 已售商品
 ## 查询已售
 ## 退款
-# 退款
+# 退款处理
 ## 查询退款
-# 安全存储
-## 存储用户卡信息
-## 删除用户卡信息
-## 查询用户卡信息
-;# 通用支付对象
 # 渠道路由
 ## 添加渠道
 ## 删除渠道
