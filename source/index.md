@@ -1,24 +1,17 @@
 ---
-title: API 参考文档
+title: Android SDK 参考文档
 
 language_tabs:
-  - shell: CURL
-  - php: PHP 
-  - c: ANDROID
-  - java: JAVA
-
+  - java: 示例代码
 
 toc_footers:
- - <a href='#'>Sign Up for a Developer Key</a>
- - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+ - <a href='/restapi'>REST API文档</a>
 ---
-# 产品简介
-## 功能时序图
-
 # 新手上路
-## Android 集成引导
+## 简介
+### 功能时序图
 
-### 聚易付SDK替您完成...
+### SDK替您完成...
 
 1. 向用户展示适用于支付的动态UI
 2. 处理支付操作
@@ -26,37 +19,20 @@ toc_footers:
 
 ### 您只需...
 
-1. 从聚易付SDK接收支付信息反馈
-2. 发送支付信息到您的服务器并验证
-3. 为用户提供支付订单匹配的产品和服务
+1. 从SDK获得支付订单反馈
+2. 发送反馈信息到您的服务器并验证
+3. 向用户提供匹配的产品和服务
 
-#### 初始化设置
-## PHP 集成引导
+## 系统需求
+# 准备工作
+## 下载SDK
+## 配置系统环境
+# 项目工程配置
+# 授权证书
+# 功能示例
+## 发起支付
 
-# 授权机制说明
-## 获取Token
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-# 支付订单
-## 订单创建
-生成一个支付订单
-
-```shell
-curl "https://api.example.com/v1/payments/new"
-  -H "access_token=xxxxx"
-  -d "product_id=123" \
-  -d "product_name=apple" \
-  -d "amount=10.00"
-```
-
-
-```php
-<?php
-  print("Hello {$world}");
-?>
-```
+当用户点击“支付”按钮时，调用此操作
 
 ```java
 public class java {
@@ -66,18 +42,11 @@ public class java {
 }
 BasicAmountType billingAmount = new BasicAmountType(
                                 CurrencyCodeType.USD, "3.00");
-
 ```
+### 方法
+Payment.create
 
-```c
-android code here
-```
-
-### HTTP 请求
-
-`POST https://api.example.com/v1/payments/create`
-
-### 请求参数
+### 参数
 
 必选参数 | 类型 | 说明
 --------- | ------- | -----------
@@ -94,26 +63,8 @@ amount | Int | 金额
 external_ext | String | 外部扩展字段
 memo | String | 备注
 
-## 订单查询
+# 测试 
 
-查询订单详情
-
-### HTTP 请求
-
-`GET https://api.example.com/v1/payments`
-
-### 请求参数
-
-必选参数 | 类型 | 说明
---------- | ------- | -----------
-order_id | String | 订单代码
-
-# 渠道路由
-## 添加渠道
-## 删除渠道
-## 查询渠道
-# 清算
-## 账单查询
 # 错误代码
 
 在运行过程中，可能返回如下错误代码：
@@ -133,12 +84,8 @@ order_id | String | 订单代码
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
 0000| 成功
 
-# 变更记录
+# 变更历史
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+0.1 - 文档测试
 
 
