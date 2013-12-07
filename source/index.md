@@ -74,7 +74,7 @@ android code here
 
 ### HTTP 请求
 
-`POST https://api.example.com/v1/payments/payment`
+`POST https://api.example.com/v1/payments/new`
 
 ### 请求参数
 
